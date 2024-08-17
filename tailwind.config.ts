@@ -25,6 +25,10 @@ const config = {
         arial: ["Arial", ...fontFamily.sans],
       },
       colors: {
+        resume: {
+          primary: "var(--resume-primary)",
+        },
+
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
