@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   ResizableHandle,
@@ -33,6 +33,22 @@ export const ResumePage = () => {
       projects: [],
       skills: [],
       socialMedias: [],
+    },
+    structure: {
+      template: "ditto",
+      colorTheme: "slate",
+      language: "portuguese",
+      layout: {
+        mainSections: [
+          { key: "socialMedias" },
+          { key: "summary" },
+          { key: "experiences" },
+          { key: "educations" },
+          { key: "certifications" },
+          { key: "projects" },
+        ],
+        sidebarSections: [{ key: "languages" }, { key: "skills" }],
+      },
     },
   };
 
