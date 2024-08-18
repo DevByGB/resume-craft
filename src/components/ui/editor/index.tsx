@@ -6,6 +6,7 @@ import Underline from "@tiptap/extension-underline";
 import TextAlign from "@tiptap/extension-text-align";
 import { cn } from '@/lib/utils';
 import { MenuBar } from './menu-bar';
+import { useEffect } from 'react';
 
 type EditorProps = {
   value: string;
@@ -47,6 +48,16 @@ export const Editor = ({ value, onChange, className }: EditorProps) => {
     },
     autofocus: false,
   });
+
+  useEffect(() => {
+    const editorHTML = editor?.getHTML();
+
+    if (editorHTML !== value) {
+      setTimeout(() => {
+        editor?.commands.setContent(value);
+      }, 0);
+    }
+  }, [value])
 
   return (
     <div className={cn(

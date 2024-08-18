@@ -13,6 +13,18 @@ const getResumeUrl = async (payload: ResumeDownloadPayload) => {
   return window.URL.createObjectURL(data);
 };
 
+type AIGenerationPayload = {
+  jobTitle: string;
+  jobDescription: string;
+};
+
+const generateContentForJob = async (payload: AIGenerationPayload) => {
+  const { data } = await api.post("/generate/job-title", payload);
+
+  return data;
+}
+
 export const ApiService = {
   getResumeUrl,
+  generateContentForJob,
 };

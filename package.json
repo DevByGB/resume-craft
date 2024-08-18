@@ -45,6 +45,7 @@
     "next-auth": "^5.0.0-beta.20",
     "next-themes": "^0.3.0",
     "npx": "^10.2.2",
+    "openai": "^4.56.0",
     "puppeteer": "^23.1.0",
     "react": "^18",
     "react-dom": "^18",
@@ -56,7 +57,8 @@
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
