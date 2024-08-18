@@ -3,6 +3,11 @@ import Image from "next/image";
 import Logo from "@/assets/logo.svg";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  description: "Crie currículos de forma rápida e fácil com nossos modelos gratuitos.",
+}
 
 export default function Home() {
   return (

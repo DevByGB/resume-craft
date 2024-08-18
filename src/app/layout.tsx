@@ -13,6 +13,9 @@ const fontTitle = Nunito({ subsets: ["latin"], variable: "--font-title" });
 
 export const metadata: Metadata = {
   title: "ResumeCraft",
+  icons: {
+    icon: "/favicon.svg",
+  }
 };
 
 setDefaultOptions({ locale: ptBR });
