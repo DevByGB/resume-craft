@@ -15,6 +15,13 @@
       "when": 1723998078010,
       "tag": "0001_bored_sunfire",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1724013282231,
+      "tag": "0002_wooden_moonstone",
+      "breakpoints": true
     }
   ]
 }
