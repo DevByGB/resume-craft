@@ -4,11 +4,10 @@ import { useState } from "react"
 import { toast } from "sonner";
 
 const handleErrorMessage = (error: unknown) => {
-  if (error instanceof Error) {
-    return error.message;
-  }
-
   if (!axios.isAxiosError(error)) {
+    if (error instanceof Error) {
+      return error.message;
+    }
     return "Ocorreu um erro inesperado.";
   }
 
