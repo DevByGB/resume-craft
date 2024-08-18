@@ -8,6 +8,13 @@
       "when": 1723997334598,
       "tag": "0000_bored_living_mummy",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1723998078010,
+      "tag": "0001_bored_sunfire",
+      "breakpoints": true
     }
   ]
 }
