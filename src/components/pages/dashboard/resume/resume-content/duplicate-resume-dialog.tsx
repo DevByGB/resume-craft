@@ -3,7 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { BaseDialogProps, Dialog } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { deleteResume, duplicateResume } from "@/db/actions";
+import { duplicateResume } from "@/db/actions";
+import { useMutation } from "@tanstack/react-query";
 import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -23,15 +24,17 @@ export const DuplicateResumeDialog = (props: BaseDialogProps) => {
 
   const resumeId = params.id as string;
 
-  const onSubmit = async (data: FormData) => {
-    try {
-      const newResume = await duplicateResume(resumeId, data.title);
+  const { mutate: handleDuplicateResume, isPending } = useMutation({
+    mutationFn: (title: string) => duplicateResume(resumeId, title),
+    onSuccess: (newResume) => {
       toast.success("Currículo duplicado com sucesso.");
+      setOpen(false);
       router.push(`/dashboard/resumes/${newResume.id}`);
-    } catch (error) {
-      console.error(error);
-      toast.error("Erro ao duplicar currículo, tente novamente mais tarde.");
     }
+  })
+
+  const onSubmit = async (data: FormData) => {
+    handleDuplicateResume(data.title);
   }
 
   return (
@@ -52,11 +55,11 @@ export const DuplicateResumeDialog = (props: BaseDialogProps) => {
             )}
           />
 
-          <div className="flex mt-4 ml-auto gap-4">
+          <div className="flex mt-4 ml-auto gap-3">
             <Button variant="secondary" onClick={() => setOpen(false)}>
               Cancelar
             </Button>
-            <Button type="submit">
+            <Button type="submit" disabled={isPending}>
               Duplicar
             </Button>
           </div>

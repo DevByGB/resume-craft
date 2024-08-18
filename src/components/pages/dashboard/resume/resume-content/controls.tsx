@@ -12,7 +12,7 @@ type TransformControlsProps = {
 export const TransformControls = ({ title }: TransformControlsProps) => {
   const { zoomIn, zoomOut, centerView } = useControls();
 
-  const { handleDownloadResume } = useResumeDownload(title);
+  const { handleDownloadResume, isLoading } = useResumeDownload(title);
 
   const controls = [
     {
@@ -34,6 +34,7 @@ export const TransformControls = ({ title }: TransformControlsProps) => {
       icon: Download,
       label: "Baixar PDF",
       onClick: () => handleDownloadResume(),
+      disabled: isLoading,
     }
   ];
 
@@ -51,6 +52,7 @@ export const TransformControls = ({ title }: TransformControlsProps) => {
             className="w-6 h-6 bg-transparent"
             size="icon"
             onClick={control.onClick}
+            disabled={control.disabled}
           >
             <control.icon size={16} />
           </Button>
