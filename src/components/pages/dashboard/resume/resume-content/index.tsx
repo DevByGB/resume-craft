@@ -6,7 +6,11 @@ import { TransformControls } from "./controls";
 import { NavigationHeader } from "./header";
 import { useFormContext } from "react-hook-form";
 
-export const ResumeContent = () => {
+type ResumeContentProps = {
+  title: string;
+}
+
+export const ResumeContent = ({ title }: ResumeContentProps) => {
   const { watch } = useFormContext<ResumeData>();
 
   const data = watch();
@@ -21,7 +25,7 @@ export const ResumeContent = () => {
         limitToBounds={false}
       >
         <>
-          <NavigationHeader />
+          <NavigationHeader title={title} />
           <TransformControls />
           <TransformComponent>
             <ResumeTemplate data={data} />

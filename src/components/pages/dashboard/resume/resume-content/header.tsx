@@ -3,7 +3,11 @@ import { Tooltip } from "@/components/ui/tooltip";
 import { Copy, Download, Home, Trash } from "lucide-react";
 import Link from "next/link";
 
-export const NavigationHeader = () => {
+type NavigationHeaderProps = {
+  title: string;
+}
+
+export const NavigationHeader = ({ title }: NavigationHeaderProps) => {
   return (
     <header className="absolute w-full left-0 top-0 z-10 p-2 bg-background border-b border-muted flex items-center justify-between gap-2">
       <div className="flex items-center gap-2">
@@ -21,7 +25,7 @@ export const NavigationHeader = () => {
 
         <span className="text-muted-foreground">/</span>
 
-        <p className="text-lg font-title font-bold ml-1">Título do currículo</p>
+        <p className="text-lg font-title font-bold ml-1">{title}</p>
       </div>
 
       <div className="flex gap-1">
