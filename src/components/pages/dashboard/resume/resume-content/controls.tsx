@@ -1,11 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Tooltip } from "@/components/ui/tooltip";
+import { useResumeDownload } from "@/hooks/use-resume-download";
 import { cn } from "@/lib/utils"
 import { Download, RotateCcw, ZoomIn, ZoomOut } from "lucide-react"
 import { useControls } from "react-zoom-pan-pinch"
 
-export const TransformControls = () => {
+type TransformControlsProps = {
+  title: string;
+}
+
+export const TransformControls = ({ title }: TransformControlsProps) => {
   const { zoomIn, zoomOut, centerView } = useControls();
+
+  const { handleDownloadResume } = useResumeDownload(title);
 
   const controls = [
     {
@@ -26,7 +33,7 @@ export const TransformControls = () => {
     {
       icon: Download,
       label: "Baixar PDF",
-      onClick: () => console.log("Download PDF"),
+      onClick: () => handleDownloadResume(),
     }
   ];
 

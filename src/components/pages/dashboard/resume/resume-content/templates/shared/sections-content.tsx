@@ -245,6 +245,7 @@ export const ResumeSectionContent = ({
                   dangerouslySetInnerHTML={{ __html: project.summary }}
                 />
               )}
+              <Element className="text-xs">{project.keywords}</Element>
             </div>
           ))}
         </div>
