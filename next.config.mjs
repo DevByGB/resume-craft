@@ -1,5 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    serverComponentsExternalPackages: [
+      "puppeteer-core",
+      "@sparticuz/chromium",
+    ]
+  },
   reactStrictMode: false,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
