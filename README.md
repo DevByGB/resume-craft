@@ -5,7 +5,7 @@ Neste curso, você aprenderá a criar do zero ao deploy o **ResumeCraft**, um po
 ## O que você vai construir?
 Durante o curso, você desenvolverá um projeto completo com as seguintes funcionalidades:
 
-- **Autenticação**: Implementação de um sistema de login e registro de usuários, utilizando Google o Github.
+- **Autenticação**: Implementação de um sistema de login e registro de usuários, utilizando Google ou Github.
 - **Criação de Currículos com Editor em Tempo Real**: Ferramenta interativa para criar e personalizar currículos.
 - **Armazenamento no Banco de Dados**: Salve os currículos criados pelos usuários em um banco de dados.
 - **Geração de Conteúdo com Inteligência Artificial**: Utilize AI para sugerir descrições e otimizar os currículos dos usuários.
